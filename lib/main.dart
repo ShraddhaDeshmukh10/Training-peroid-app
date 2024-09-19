@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      initialRoute: '/',
+      initialRoute: Routes.homeone,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -25,6 +25,16 @@ class MyApp extends StatelessWidget {
       routes: {
         Routes.homeone: (context) => Home_One(),
         Routes.hometwo: (context) => Home_Two(),
+      },
+      onGenerateRoute: (settings) {
+        switch (settings.name) {
+          case Routes.homeone:
+            return MaterialPageRoute(builder: (context) => Home_One());
+          case Routes.hometwo:
+            return MaterialPageRoute(builder: (context) => Home_Two());
+          default:
+            return MaterialPageRoute(builder: (context) => Home_One());
+        }
       },
     );
   }
