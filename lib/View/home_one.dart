@@ -39,7 +39,11 @@ class _Home_OneState extends State<Home_One> {
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamedAndRemoveUntil(
-                    context, Routes.parameterizedroute, (route) => false);
+                    context,
+                    Routes.parameterizedroute,
+                    arguments:
+                        "Hello , I am Shraddha. Passed this through Argument",
+                    (route) => false);
               },
               child: const Text("Parameterized Route"),
             ),

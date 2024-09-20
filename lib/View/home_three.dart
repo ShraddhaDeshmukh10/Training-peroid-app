@@ -18,7 +18,7 @@ class Home_three extends StatelessWidget {
             icon: Icon(Icons.flip_to_back_sharp),
             onPressed: () {
               Navigator.pushNamedAndRemoveUntil(
-                  context, Routes.parameterizedroute, (route) => false);
+                  context, Routes.homeone, (route) => false);
             },
           ),
           SizedBox(

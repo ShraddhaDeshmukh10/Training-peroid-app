@@ -26,17 +26,17 @@ class MyApp extends StatelessWidget {
       routes: {
         Routes.homeone: (context) => const Home_One(),
         Routes.hometwo: (context) => const Home_Two(),
-        Routes.parameterizedroute: (context) =>
-            const Parameterized_Route(text: "Hello I am Shraddha"),
+        // Routes.parameterizedroute: (context) =>
+        //     const Parameterized_Route(text: "Hello I am Shraddha"),
         Routes.homethree: (context) => const Home_three(),
       },
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case Routes.parameterizedroute:
             {
+              final args = settings.arguments as String;
               return MaterialPageRoute(
-                  builder: (context) =>
-                      const Parameterized_Route(text: "Hello I am Shraddha"));
+                  builder: (context) => Parameterized_Route(text: args));
             }
           case Routes.homeone:
             return MaterialPageRoute(builder: (context) => const Home_One());
