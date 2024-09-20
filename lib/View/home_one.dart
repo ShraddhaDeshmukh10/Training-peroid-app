@@ -23,7 +23,8 @@ class _Home_OneState extends State<Home_One> {
           children: [
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, Routes.homeone);
+                Navigator.pushNamedAndRemoveUntil(
+                    context, Routes.homeone, (route) => false);
               },
               child: const Text("Home Page 1"),
             ),
