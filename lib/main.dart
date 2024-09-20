@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:trail_demo/Resources/route.dart';
-import 'package:trail_demo/View/home%20one.dart';
-import 'package:trail_demo/View/home%20two.dart';
+import 'package:trail_demo/View/home_one.dart';
+import 'package:trail_demo/View/home_three.dart';
+import 'package:trail_demo/View/home_two.dart';
+import 'package:trail_demo/View/parameterized_route.dart';
+import 'package:toastification/toastification.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,9 +28,17 @@ class MyApp extends StatelessWidget {
       routes: {
         Routes.homeone: (context) => Home_One(),
         Routes.hometwo: (context) => Home_Two(),
+        Routes.parameterizedroute: (context) => Parameterized_Route(),
+        Routes.homethree: (context) => Home_three(),
       },
       onGenerateRoute: (settings) {
         switch (settings.name) {
+          case Routes.parameterizedroute:
+            toastification.show(
+              context: context,
+              title: Text('Hello, world!'),
+              autoCloseDuration: const Duration(seconds: 5),
+            );
           case Routes.homeone:
             return MaterialPageRoute(builder: (context) => Home_One());
           case Routes.hometwo:

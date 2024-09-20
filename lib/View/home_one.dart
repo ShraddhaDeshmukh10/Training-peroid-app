@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trail_demo/Resources/route.dart';
+import 'package:trail_demo/View/parameterized_route.dart';
 
 class Home_One extends StatefulWidget {
   const Home_One({super.key});
@@ -13,7 +14,9 @@ class _Home_OneState extends State<Home_One> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Page One"),
+        centerTitle: true,
+        title: Text("Welcome to Page One"),
+        backgroundColor: Colors.blue,
       ),
       body: Center(
         child: Column(
@@ -34,7 +37,19 @@ class _Home_OneState extends State<Home_One> {
                 onPressed: () {
                   Navigator.pushNamed(context, Routes.hometwo);
                 },
-                child: Text("Home Page 2"))
+                child: Text("Home Page 2")),
+            SizedBox(
+              height: 30,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Parameterized_Route()),
+                      (route) => true);
+                },
+                child: Text("Parameterized Route"))
           ],
         ),
       ),
