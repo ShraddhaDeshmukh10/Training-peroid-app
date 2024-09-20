@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trail_demo/View/home_one.dart';
 
 class Home_three extends StatelessWidget {
   const Home_three({super.key});
@@ -15,12 +16,17 @@ class Home_three extends StatelessWidget {
         children: [
           IconButton(
             icon: Icon(Icons.flip_to_back_sharp),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => Home_One()),
+                  (route) => false);
+            },
           ),
           SizedBox(
             height: 30,
           ),
-          Text("Click Here for Visit of Page One")
+          Text("Click on Icon to Visit Page One")
         ],
       ),
     );
