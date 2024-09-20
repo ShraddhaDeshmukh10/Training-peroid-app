@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:trail_demo/Resources/Parameterized_Route.dart';
 import 'package:trail_demo/Resources/route.dart';
-import 'package:trail_demo/View/parameterized_route.dart';
 
 class Home_One extends StatefulWidget {
   const Home_One({super.key});
@@ -15,41 +15,39 @@ class _Home_OneState extends State<Home_One> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Welcome to Page One"),
+        title: const Text("Welcome to Page One"),
         backgroundColor: Colors.blue,
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
-              height: 30,
-            ),
             ElevatedButton(
-              child: Text("Home page 1"),
               onPressed: () {
                 Navigator.pushNamed(context, Routes.homeone);
               },
+              child: const Text("Home Page 1"),
             ),
-            SizedBox(
-              height: 30,
-            ),
+            const SizedBox(height: 30),
             ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, Routes.hometwo);
-                },
-                child: Text("Home Page 2")),
-            SizedBox(
-              height: 30,
+              onPressed: () {
+                Navigator.pushNamed(context, Routes.hometwo);
+              },
+              child: const Text("Home Page 2"),
             ),
+            const SizedBox(height: 30),
             ElevatedButton(
-                onPressed: () {
-                  Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => Parameterized_Route()),
-                      (route) => true);
-                },
-                child: Text("Parameterized Route"))
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        const Parameterized_Route(text: "Hello I am Shraddha"),
+                  ),
+                );
+              },
+              child: const Text("Parameterized Route"),
+            ),
           ],
         ),
       ),
