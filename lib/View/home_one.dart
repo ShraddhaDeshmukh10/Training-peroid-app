@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:trail_demo/Resources/Parameterized_Route.dart';
 import 'package:trail_demo/Resources/route.dart';
 
 class Home_One extends StatefulWidget {
@@ -38,13 +37,8 @@ class _Home_OneState extends State<Home_One> {
             const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        const Parameterized_Route(text: "Hello I am Shraddha"),
-                  ),
-                );
+                Navigator.pushNamedAndRemoveUntil(
+                    context, Routes.parameterizedroute, (route) => false);
               },
               child: const Text("Parameterized Route"),
             ),

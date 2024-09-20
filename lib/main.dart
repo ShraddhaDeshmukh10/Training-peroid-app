@@ -3,8 +3,7 @@ import 'package:trail_demo/Resources/route.dart';
 import 'package:trail_demo/View/home_one.dart';
 import 'package:trail_demo/View/home_three.dart';
 import 'package:trail_demo/View/home_two.dart';
-
-import 'Resources/Parameterized_Route.dart';
+import 'View/Parameterized_Route.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +27,7 @@ class MyApp extends StatelessWidget {
         Routes.homeone: (context) => const Home_One(),
         Routes.hometwo: (context) => const Home_Two(),
         Routes.parameterizedroute: (context) =>
-            const Parameterized_Route(text: "Hello, I am Shraddha!"),
+            const Parameterized_Route(text: "Hello I am Shraddha"),
         Routes.homethree: (context) => const Home_three(),
       },
       onGenerateRoute: (settings) {
@@ -37,7 +36,7 @@ class MyApp extends StatelessWidget {
             {
               return MaterialPageRoute(
                   builder: (context) =>
-                      const Parameterized_Route(text: "Hello, I am Shraddha!"));
+                      const Parameterized_Route(text: "Hello I am Shraddha"));
             }
           case Routes.homeone:
             return MaterialPageRoute(builder: (context) => const Home_One());

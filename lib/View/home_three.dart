@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trail_demo/View/home_one.dart';
+import 'package:trail_demo/Resources/route.dart';
 
 class Home_three extends StatelessWidget {
   const Home_three({super.key});
@@ -17,10 +17,8 @@ class Home_three extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.flip_to_back_sharp),
             onPressed: () {
-              Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(builder: (context) => Home_One()),
-                  (route) => false);
+              Navigator.pushNamedAndRemoveUntil(
+                  context, Routes.parameterizedroute, (route) => false);
             },
           ),
           SizedBox(
