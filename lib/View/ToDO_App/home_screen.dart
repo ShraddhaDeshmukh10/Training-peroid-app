@@ -54,6 +54,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       inputFormatters: [
                         FilteringTextInputFormatter.allow(
                             RegExp(r'[a-zA-Z0-9 ]')),
+                        FilteringTextInputFormatter.deny(
+                          RegExp(r'^\s+|\s+$'),
+                        )
                       ],
                       controller: _controller,
                       decoration: InputDecoration(
