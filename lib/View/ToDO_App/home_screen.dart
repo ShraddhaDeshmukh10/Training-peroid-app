@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:trail_demo/Resources/route.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -49,6 +50,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Expanded(
                     child: TextField(
+                      keyboardType: TextInputType.numberWithOptions(),
+                      inputFormatters: [
+                        FilteringTextInputFormatter.allow(
+                            RegExp(r'[a-zA-Z0-9 ]')),
+                      ],
                       controller: _controller,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
