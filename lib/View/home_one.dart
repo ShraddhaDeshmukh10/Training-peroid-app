@@ -24,26 +24,27 @@ class _Home_OneState extends State<Home_One> {
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamedAndRemoveUntil(
-                    context, Routes.homeone, (route) => false);
+                    context, Routes.homescreen, (route) => false);
               },
               child: const Text("Home Page 1"),
             ),
             const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, Routes.hometwo);
+                Navigator.pushNamed(context, Routes.addnote);
               },
               child: const Text("Home Page 2"),
             ),
             const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamedAndRemoveUntil(
-                    context,
-                    Routes.parameterizedroute,
-                    arguments:
-                        "Hello , I am Shraddha. Passed this through Argument",
-                    (route) => false);
+                // Navigator.pushNamedAndRemoveUntil(
+                //     context,
+                //     Routes.parameterizedroute,
+                //     arguments:
+                //         "Hello , I am Shraddha. Passed this through Argument",
+                //     (route) => false);
+                Navigator.pushNamed(context, Routes.parameterizedroute);
               },
               child: const Text("Parameterized Route"),
             ),

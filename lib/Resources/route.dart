@@ -1,7 +1,7 @@
 class Routes {
-  static const String homeone = '/Homeone';
+  static const String homescreen = '/homescreen';
 
-  static const String hometwo = '/Hometwo';
+  static const String addnote = '/addnote';
 
   static const String parameterizedroute = '/Parametrized';
 

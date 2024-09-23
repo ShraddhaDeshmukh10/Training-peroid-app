@@ -20,14 +20,14 @@ class Home_Two extends StatelessWidget {
             const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, Routes.hometwo);
+                Navigator.pushNamed(context, Routes.addnote);
               },
               child: const Text("Home Page Two"),
             ),
             const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, Routes.homeone);
+                Navigator.pushNamed(context, Routes.homescreen);
               },
               child: const Text("Home Page One"),
             ),

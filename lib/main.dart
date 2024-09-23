@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trail_demo/Resources/route.dart';
+import 'package:trail_demo/View/ToDO_App/add_note.dart';
+import 'package:trail_demo/View/ToDO_App/home_screen.dart';
 import 'package:trail_demo/View/home_one.dart';
 import 'package:trail_demo/View/home_three.dart';
 import 'package:trail_demo/View/home_two.dart';
@@ -16,18 +18,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      initialRoute: Routes.homeone,
+      initialRoute: Routes.homescreen,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Home_One(),
+      home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
       routes: {
-        Routes.homeone: (context) => const Home_One(),
-        Routes.hometwo: (context) => const Home_Two(),
-        // Routes.parameterizedroute: (context) =>
-        //     const Parameterized_Route(text: "Hello I am Shraddha"),
+        Routes.homescreen: (context) => const HomeScreen(),
+        Routes.addnote: (context) => const AddNote(),
+        Routes.parameterizedroute: (context) => const Parameterized_Route(),
         Routes.homethree: (context) => const Home_three(),
       },
       onGenerateRoute: (settings) {
@@ -38,9 +39,9 @@ class MyApp extends StatelessWidget {
               return MaterialPageRoute(
                   builder: (context) => Parameterized_Route(text: args));
             }
-          case Routes.homeone:
+          case Routes.homescreen:
             return MaterialPageRoute(builder: (context) => const Home_One());
-          case Routes.hometwo:
+          case Routes.addnote:
             return MaterialPageRoute(builder: (context) => const Home_Two());
           default:
             return MaterialPageRoute(builder: (context) => const Home_One());

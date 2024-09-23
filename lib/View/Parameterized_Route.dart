@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Parameterized_Route extends StatelessWidget {
-  final String text;
+  final String? text;
 
-  const Parameterized_Route({super.key, required this.text});
+  const Parameterized_Route({super.key, this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,8 @@ class Parameterized_Route extends StatelessWidget {
         backgroundColor: Colors.blue,
       ),
       body: Center(
-        child: Text(text, style: const TextStyle(fontSize: 24)),
+        child: Text(text == null ? "This is blank" : text!,
+            style: const TextStyle(fontSize: 24)),
       ),
     );
   }
