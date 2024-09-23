@@ -50,7 +50,7 @@ class _AddNoteState extends State<AddNote> {
               padding: const EdgeInsets.all(8.0),
               child: TextField(
                 inputFormatters: [
-                  FilteringTextInputFormatter.allow(RegExp('r[a-zA-z0-9]'))
+                  FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z0-9]'))
                 ],
                 controller: _addnoteController,
                 focusNode: _noteFocusNode,
