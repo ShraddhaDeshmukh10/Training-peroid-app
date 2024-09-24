@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
               icon: Icon(Icons.feed)),
           IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, Routes.stackflexible);
+                Navigator.pushNamed(context, Routes.stackcollection);
               },
               icon: Icon(Icons.stacked_bar_chart))
         ],

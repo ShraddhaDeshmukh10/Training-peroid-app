@@ -3,7 +3,9 @@ class Routes {
 
   static const String addnote = '/addnote';
 
-  static const String stackflexible = '/Parametrized';
+  static const String stackflexible = '/stackflexible';
 
   static const String userform = '/userform';
+
+  static const String stackcollection = 'stackcollection';
 }
