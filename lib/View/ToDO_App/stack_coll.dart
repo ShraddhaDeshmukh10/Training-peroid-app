@@ -18,22 +18,26 @@ class _Stack_FlexibleState extends State<Stack_Flexible> {
           Container(
               width: double.infinity,
               height: 200,
+              // decoration: BoxDecoration(
+              //     image:
+              //         DecorationImage(image: AssetImage("assets/mogra.jpg"))),
               child: Stack(
                 children: [
-                  Image.network(
-                    "https://rukminim2.flixcart.com/image/850/1000/xif0q/plant-sapling/i/m/f/annual-no-yes-jasmine-mogra-plant-1-plastic-bag-farmplants-original-imaggechxjqgcarz.jpeg?q=90&crop=false",
+                  Image.asset(
+                    "assets/mogra.jpg",
                     fit: BoxFit.cover,
                   ),
                   Positioned(
                       top: 90,
                       left: 20,
                       child: Container(
-                        width: 50,
-                        height: 50,
+                        child: Text("Container 1 with Stack- Click to Home"),
+                        width: 100,
+                        height: 80,
                         color: Colors.purple,
                       )),
                   Positioned(
-                      top: 92,
+                      top: 140,
                       left: 22,
                       child: IconButton(
                           onPressed: () {
@@ -45,24 +49,27 @@ class _Stack_FlexibleState extends State<Stack_Flexible> {
           Flexible(
             flex: 2,
             child: Container(
+              child: Text("flex 1- container 2"),
               color: Colors.orange.shade400,
             ),
           ),
           Flexible(
             flex: 1,
             child: Container(
-              color: Colors.white,
+              child: Text("flex 2- container 3"),
             ),
           ),
           Flexible(
             flex: 1,
             child: Container(
+              child: Text("flex 2- container 4"),
               color: Colors.blue.shade900,
             ),
           ),
           Flexible(
             flex: 2,
             child: Container(
+              child: Text("flex 1- container 5"),
               color: Colors.green,
             ),
           ),
