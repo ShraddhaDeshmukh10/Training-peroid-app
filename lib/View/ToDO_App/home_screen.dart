@@ -24,7 +24,12 @@ class _HomeScreenState extends State<HomeScreen> {
               onPressed: () {
                 Navigator.pushReplacementNamed(context, Routes.addnote);
               },
-              icon: Icon(Icons.note_add))
+              icon: Icon(Icons.note_add)),
+          IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, Routes.userform);
+              },
+              icon: Icon(Icons.feed))
         ],
       ),
       body: Container(
@@ -70,8 +75,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     icon: Icon(Icons.add),
                     onPressed: () {
                       setState(() {
-                        if (_controller.text.isNotEmpty) {
-                          _tasks.add(_controller.text);
+                        String task = _controller.text.trim();
+                        if (task.isNotEmpty) {
+                          _tasks.add(task);
                           _controller.clear();
                         }
                       });

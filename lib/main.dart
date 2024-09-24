@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:trail_demo/Resources/route.dart';
 import 'package:trail_demo/View/ToDO_App/add_note.dart';
 import 'package:trail_demo/View/ToDO_App/home_screen.dart';
+import 'package:trail_demo/View/ToDO_App/user_details.dart';
 import 'package:trail_demo/View/home_one.dart';
-import 'package:trail_demo/View/home_three.dart';
 import 'package:trail_demo/View/home_two.dart';
 import 'View/Parameterized_Route.dart';
 
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         Routes.homescreen: (context) => const HomeScreen(),
         Routes.addnote: (context) => const AddNote(),
         Routes.parameterizedroute: (context) => const Parameterized_Route(),
-        Routes.homethree: (context) => const Home_three(),
+        Routes.userform: (context) => const User_Details_Feedbackform(),
       },
       onGenerateRoute: (settings) {
         switch (settings.name) {
