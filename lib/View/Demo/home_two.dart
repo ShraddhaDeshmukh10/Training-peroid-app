@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trail_demo/Resources/route.dart';
-import 'package:trail_demo/View/home_three.dart';
+import 'package:trail_demo/View/Demo/home_three.dart';
 
 class Home_Two extends StatelessWidget {
   const Home_Two({super.key});

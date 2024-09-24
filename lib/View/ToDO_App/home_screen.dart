@@ -29,7 +29,12 @@ class _HomeScreenState extends State<HomeScreen> {
               onPressed: () {
                 Navigator.pushNamed(context, Routes.userform);
               },
-              icon: Icon(Icons.feed))
+              icon: Icon(Icons.feed)),
+          IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, Routes.stackflexible);
+              },
+              icon: Icon(Icons.stacked_bar_chart))
         ],
       ),
       body: Container(

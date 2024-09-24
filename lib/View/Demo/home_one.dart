@@ -40,11 +40,11 @@ class _Home_OneState extends State<Home_One> {
               onPressed: () {
                 // Navigator.pushNamedAndRemoveUntil(
                 //     context,
-                //     Routes.parameterizedroute,
+                //     Routes.stackflexible,
                 //     arguments:
                 //         "Hello , I am Shraddha. Passed this through Argument",
                 //     (route) => false);
-                Navigator.pushNamed(context, Routes.parameterizedroute);
+                Navigator.pushNamed(context, Routes.stackflexible);
               },
               child: const Text("Parameterized Route"),
             ),

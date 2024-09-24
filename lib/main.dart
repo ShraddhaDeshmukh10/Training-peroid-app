@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:trail_demo/Resources/route.dart';
 import 'package:trail_demo/View/ToDO_App/add_note.dart';
 import 'package:trail_demo/View/ToDO_App/home_screen.dart';
+import 'package:trail_demo/View/ToDO_App/stack.dart';
 import 'package:trail_demo/View/ToDO_App/user_details.dart';
-import 'package:trail_demo/View/home_one.dart';
-import 'package:trail_demo/View/home_two.dart';
-import 'View/Parameterized_Route.dart';
+import 'package:trail_demo/View/Demo/home_one.dart';
+import 'package:trail_demo/View/Demo/home_two.dart';
+import 'View/Demo/Parameterized_Route.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,12 +29,12 @@ class MyApp extends StatelessWidget {
       routes: {
         Routes.homescreen: (context) => const HomeScreen(),
         Routes.addnote: (context) => const AddNote(),
-        Routes.parameterizedroute: (context) => const Parameterized_Route(),
+        Routes.stackflexible: (context) => const Stack_flexible(),
         Routes.userform: (context) => const User_Details_Feedbackform(),
       },
       onGenerateRoute: (settings) {
         switch (settings.name) {
-          case Routes.parameterizedroute:
+          case Routes.stackflexible:
             {
               final args = settings.arguments as String;
               return MaterialPageRoute(
