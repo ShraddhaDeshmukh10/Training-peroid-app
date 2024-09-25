@@ -8,4 +8,6 @@ class Routes {
   static const String userform = '/userform';
 
   static const String stackcollection = 'stackcollection';
+
+  static const String dialerpad = 'dialerpad';
 }

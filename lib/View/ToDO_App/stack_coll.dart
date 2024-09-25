@@ -116,7 +116,7 @@ class _Stack_FlexibleState extends State<Stack_Flexible> {
                   children: List.generate(20, (index) {
                     return GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, Routes.homescreen);
+                        Navigator.pushNamed(context, Routes.dialerpad);
                       },
                       child: Container(
                           decoration: const BoxDecoration(
@@ -124,11 +124,13 @@ class _Stack_FlexibleState extends State<Stack_Flexible> {
                                   image: AssetImage(
                             "assets/mogra.jpg",
                           ))),
-                          child: const Text(
-                            "                      Click to Home Screen",
-                            style: TextStyle(
-                                color: Colors.blue,
-                                fontWeight: FontWeight.bold),
+                          child: Center(
+                            child: const Text(
+                              "Home Screen",
+                              style: TextStyle(
+                                  color: Colors.blue,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           )),
                     );
                   })),

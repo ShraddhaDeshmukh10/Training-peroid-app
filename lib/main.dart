@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trail_demo/Resources/route.dart';
 import 'package:trail_demo/View/ToDO_App/add_note.dart';
+import 'package:trail_demo/View/ToDO_App/dialerpad.dart';
 import 'package:trail_demo/View/ToDO_App/home_screen.dart';
 import 'package:trail_demo/View/ToDO_App/stack_coll.dart';
 import 'package:trail_demo/View/ToDO_App/user_details.dart';
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
         Routes.addnote: (context) => const AddNote(),
         //Routes.stackflexible: (context) => const Stack_flexible(),
         Routes.userform: (context) => const User_Details_Feedbackform(),
-        Routes.stackcollection: (context) => Stack_Flexible()
+        Routes.stackcollection: (context) => Stack_Flexible(),
+        Routes.dialerpad: (context) => Dialer_pad()
       },
       // onGenerateRoute: (settings) {
       //   switch (settings.name) {
