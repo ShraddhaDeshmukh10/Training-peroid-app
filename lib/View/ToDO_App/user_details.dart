@@ -17,7 +17,7 @@ class _User_Details_FeedbackformState extends State<User_Details_Feedbackform> {
   bool? value1 = false;
   bool? value2 = false;
   bool? value3 = false;
-  String dropdownvalue = 'Borivali';
+  String dropdownvalue = '';
   var items = [
     'Borivali',
     'Thane',
@@ -28,12 +28,15 @@ class _User_Details_FeedbackformState extends State<User_Details_Feedbackform> {
     'Satara',
     'Bhivandi',
   ];
+  var _genderlist = ["Female", "Male"];
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     _loading;
+    dropdownvalue = items.last;
+    _selectedopt = _genderlist.first;
   }
 
   @override
@@ -64,19 +67,26 @@ class _User_Details_FeedbackformState extends State<User_Details_Feedbackform> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: TextFormField(
-                        inputFormatters: [
-                          FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z]'))
-                        ],
+                        // inputFormatters: [
+                        //   FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z]'))
+                        // ],
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
                           labelText: "Enter Your Name",
                           prefixIcon: Icon(Icons.person),
                         ),
-                        onChanged: (value) {
-                          Fluttertoast.showToast(
-                              msg: "Enter Alphabets Only",
-                              backgroundColor: Colors.blue.shade300);
+                        validator: (value) {
+                          if (!RegExp(r'^[a-zA-Z]+$').hasMatch(value!)) {
+                            Fluttertoast.showToast(
+                                msg: "We accept Alphabets Only",
+                                backgroundColor: Colors.blue.shade300);
+                          }
                         },
+                        // onChanged: (value) {
+                        //   Fluttertoast.showToast(
+                        //       msg: "Enter Alphabets Only",
+                        //       backgroundColor: Colors.blue.shade300);
+                        // },
                       ),
                     ),
                     Container(
@@ -88,7 +98,7 @@ class _User_Details_FeedbackformState extends State<User_Details_Feedbackform> {
                     ),
                     RadioListTile(
                         title: Text("Female"),
-                        value: "Female",
+                        value: _genderlist[0],
                         groupValue: _selectedopt,
                         onChanged: (value) {
                           setState(() {
@@ -97,7 +107,7 @@ class _User_Details_FeedbackformState extends State<User_Details_Feedbackform> {
                         }),
                     RadioListTile(
                         title: Text("Male"),
-                        value: "Male",
+                        value: _genderlist[1],
                         groupValue: _selectedopt,
                         onChanged: (value) {
                           setState(() {

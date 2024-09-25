@@ -21,16 +21,19 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.blue.shade500,
         actions: [
           IconButton(
+              tooltip: "Add Note Page",
               onPressed: () {
                 Navigator.pushReplacementNamed(context, Routes.addnote);
               },
               icon: Icon(Icons.note_add)),
           IconButton(
+              tooltip: "Click for Feedback Form",
               onPressed: () {
                 Navigator.pushNamed(context, Routes.userform);
               },
               icon: Icon(Icons.feed)),
           IconButton(
+              tooltip: "Click for Stack Example....",
               onPressed: () {
                 Navigator.pushNamed(context, Routes.stackcollection);
               },
@@ -102,9 +105,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       trailing: IconButton(
                         icon: Icon(Icons.delete),
                         onPressed: () {
-                          setState(() {
-                            _tasks.removeAt(index);
-                          });
+                          _tasks.removeAt(index);
+                          setState(() {});
+                          // setState(() {
+                          //   _tasks.removeAt(index);
+                          // });
                         },
                       ),
                     ),
