@@ -49,16 +49,29 @@ class _Dialer_padState extends State<Dialer_pad> {
         children: [
           Expanded(
             child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
-                  crossAxisSpacing: 0,
-                  mainAxisSpacing: 2.0,
-                  childAspectRatio: 2.0,
-                ),
-                itemCount: numberbuttons.length,
-                itemBuilder: (context, index) {
-                  return numberbuttons[index];
-                }),
+              gridDelegate:
+                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+              itemCount: 12,
+              itemBuilder: (context, index) {
+                return index + 1 == 10 || index + 1 == 12
+                    ? SizedBox()
+                    : index + 1 == 11
+                        ? Text("Call")
+                        : Text("${index + 1}");
+              },
+            ),
+
+            // child: GridView.builder(
+            //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            //       crossAxisCount: 3,
+            //       crossAxisSpacing: 0,
+            //       mainAxisSpacing: 2.0,
+            //       childAspectRatio: 2.0,
+            //     ),
+            //     itemCount: numberbuttons.length,
+            //     itemBuilder: (context, index) {
+            //       return numberbuttons[index];
+            //     }),
           ),
           // Expanded(
           //   child: GridView.builder(
