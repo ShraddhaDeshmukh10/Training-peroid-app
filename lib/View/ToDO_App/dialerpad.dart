@@ -37,7 +37,7 @@ class _Dialer_padState extends State<Dialer_pad> {
             child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3,
-                  crossAxisSpacing: 10.0,
+                  crossAxisSpacing: 0,
                   mainAxisSpacing: 2.0,
                   childAspectRatio: 2.0,
                 ),
@@ -50,13 +50,19 @@ class _Dialer_padState extends State<Dialer_pad> {
             child: GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3,
-                  crossAxisSpacing: 10.0,
-                  mainAxisSpacing: 10.0,
+                  crossAxisSpacing: 0,
+                  mainAxisSpacing: 0,
                   childAspectRatio: 2.0),
               itemCount: dialpadextra.length,
               itemBuilder: (context, index) {
                 if (dialpadextra[index].isEmpty) {
                   return const SizedBox();
+                } else if (dialpadextra[index] == "call") {
+                  return CircleAvatar(
+                      backgroundColor: Colors.green,
+                      radius: 30,
+                      child:
+                          IconButton(onPressed: () {}, icon: Icon(Icons.call)));
                 } else
                   return CircleAvatar(
                     radius: 20,
