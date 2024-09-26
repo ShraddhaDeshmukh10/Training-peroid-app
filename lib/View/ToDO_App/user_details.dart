@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class User_Details_Feedbackform extends StatefulWidget {
@@ -79,6 +78,7 @@ class _User_Details_FeedbackformState extends State<User_Details_Feedbackform> {
                           if (!RegExp(r'^[a-zA-Z]+$').hasMatch(value!)) {
                             Fluttertoast.showToast(
                                 msg: "We accept Alphabets Only",
+                                webShowClose: true,
                                 backgroundColor: Colors.blue.shade300);
                           }
                         },
@@ -91,13 +91,13 @@ class _User_Details_FeedbackformState extends State<User_Details_Feedbackform> {
                     ),
                     Container(
                       width: 500,
-                      margin: EdgeInsets.only(right: 240),
-                      child: Text("Select The Gender",
+                      margin: const EdgeInsets.only(right: 240),
+                      child: const Text("Select The Gender",
                           style: TextStyle(
                               fontSize: 18, fontWeight: FontWeight.bold)),
                     ),
                     RadioListTile(
-                        title: Text("Female"),
+                        title: const Text("Female"),
                         value: _genderlist[0],
                         groupValue: _selectedopt,
                         onChanged: (value) {
@@ -106,7 +106,7 @@ class _User_Details_FeedbackformState extends State<User_Details_Feedbackform> {
                           });
                         }),
                     RadioListTile(
-                        title: Text("Male"),
+                        title: const Text("Male"),
                         value: _genderlist[1],
                         groupValue: _selectedopt,
                         onChanged: (value) {
