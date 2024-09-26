@@ -23,30 +23,56 @@ class _Dialer_padState extends State<Dialer_pad> {
       '*',
       '0',
       '#',
+      '',
+      "call",
+      ""
     ];
     return Scaffold(
       appBar: AppBar(title: Text("Dailer Pad")),
       body: Column(
         children: [
-          GridView.count(
-            crossAxisCount: 3,
-            crossAxisSpacing: 10.0,
-            mainAxisSpacing: 10.0,
-            shrinkWrap: true,
-            childAspectRatio: 2.0,
-            children: List.generate(12, (index) {
-              return CircleAvatar(
-                  radius: 10, child: Text(dialpadnumbers[index]));
-            }),
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          CircleAvatar(
-            radius: 30,
-            backgroundColor: Colors.green,
-            child: IconButton(onPressed: () {}, icon: Icon(Icons.call)),
+          Expanded(
+            child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3,
+                  crossAxisSpacing: 10.0,
+                  mainAxisSpacing: 2.0,
+                  childAspectRatio: 2.0,
+                ),
+                itemCount: dialpadnumbers.length,
+                itemBuilder: (context, index) {
+                  final dialpadText = dialpadnumbers[index];
+                  if (dialpadText.isEmpty) {
+                    return SizedBox();
+                  } else if (dialpadText == "call") {
+                    return CircleAvatar(
+                      radius: 20,
+                      backgroundColor: Colors.green,
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.call),
+                      ),
+                    );
+                  } else {
+                    return CircleAvatar(
+                      radius: 20,
+                      child: Text(dialpadText),
+                    );
+                  }
+                }),
           )
+          // GridView.count(
+          //   crossAxisCount: 3,
+          //   crossAxisSpacing: 10.0,
+          //   mainAxisSpacing: 10.0,
+          //   shrinkWrap: true,
+          //   childAspectRatio: 3.0,
+          //   children: dialpadnumbers
+          //       .map((e) => e.isEmpty
+          //           ? SizedBox()
+          //           : CircleAvatar(radius: 1, child: Text(e)))
+          //       .toList(),
+          // ),
         ],
       ),
     );
