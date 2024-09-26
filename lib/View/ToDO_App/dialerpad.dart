@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class Dialer_pad extends StatefulWidget {
   const Dialer_pad({super.key});
@@ -8,25 +9,26 @@ class Dialer_pad extends StatefulWidget {
 }
 
 class _Dialer_padState extends State<Dialer_pad> {
+  List numberbuttons = [];
+  List dialpadextra = ['*', '0', '#', "", 'call', ""];
+
+  @override
+  void initState() {
+    super.initState();
+    printNum();
+  }
+
+  void printNum() {
+    for (int i = 1; i <= 9; i++) {
+      numberbuttons.add(CircleAvatar(
+        radius: 20,
+        child: Text(i.toString()),
+      ));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    final List<String> dialpadnumbers = [
-      '1',
-      '2',
-      '3',
-      '4',
-      '5',
-      '6',
-      '7',
-      '8',
-      '9',
-      '*',
-      '0',
-      '#',
-      '',
-      "call",
-      ""
-    ];
     return Scaffold(
       appBar: AppBar(title: Text("Dailer Pad")),
       body: Column(
@@ -39,27 +41,29 @@ class _Dialer_padState extends State<Dialer_pad> {
                   mainAxisSpacing: 2.0,
                   childAspectRatio: 2.0,
                 ),
-                itemCount: dialpadnumbers.length,
+                itemCount: numberbuttons.length,
                 itemBuilder: (context, index) {
-                  final dialpadText = dialpadnumbers[index];
-                  if (dialpadText.isEmpty) {
-                    return SizedBox();
-                  } else if (dialpadText == "call") {
-                    return CircleAvatar(
-                      radius: 20,
-                      backgroundColor: Colors.green,
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.call),
-                      ),
-                    );
-                  } else {
-                    return CircleAvatar(
-                      radius: 20,
-                      child: Text(dialpadText),
-                    );
-                  }
+                  return numberbuttons[index];
                 }),
+          ),
+          Expanded(
+            child: GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3,
+                  crossAxisSpacing: 10.0,
+                  mainAxisSpacing: 10.0,
+                  childAspectRatio: 2.0),
+              itemCount: dialpadextra.length,
+              itemBuilder: (context, index) {
+                if (dialpadextra[index].isEmpty) {
+                  return const SizedBox();
+                } else
+                  return CircleAvatar(
+                    radius: 20,
+                    child: Text(dialpadextra[index]),
+                  );
+              },
+            ),
           )
           // GridView.count(
           //   crossAxisCount: 3,
