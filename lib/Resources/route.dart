@@ -10,4 +10,6 @@ class Routes {
   static const String stackcollection = 'stackcollection';
 
   static const String dialerpad = 'dialerpad';
+  static const String stag_view_ex = 'stagviewex';
+  static const String date_obj = 'dateobj';
 }

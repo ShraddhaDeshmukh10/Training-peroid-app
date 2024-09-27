@@ -37,7 +37,19 @@ class _HomeScreenState extends State<HomeScreen> {
               onPressed: () {
                 Navigator.pushNamed(context, Routes.stackcollection);
               },
-              icon: Icon(Icons.stacked_bar_chart))
+              icon: Icon(Icons.stacked_bar_chart)),
+          IconButton(
+              tooltip: "Click for Staggered Example....",
+              onPressed: () {
+                Navigator.pushNamed(context, Routes.stag_view_ex);
+              },
+              icon: Icon(Icons.grid_3x3)),
+          IconButton(
+              tooltip: "Click for Date Objects....",
+              onPressed: () {
+                Navigator.pushNamed(context, Routes.date_obj);
+              },
+              icon: Icon(Icons.timelapse))
         ],
       ),
       body: Container(
