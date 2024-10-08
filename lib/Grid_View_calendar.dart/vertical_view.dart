@@ -77,11 +77,10 @@ class _Vertical_GridState extends State<Vertical_Grid> {
     //           : "");
     // }
 
-    for (int k = 0; k < weeks.length; k++) {
+    for (int k = 0; k < weeks.length; k++) {    ///print in column first list
       List<String> col = [];
       col.add(weeks[k]);
-
-      ///print in column first list
+      
       for (int j = k; j < Dates.length; j += 7) {
         col.add(Dates[j]);
       }
