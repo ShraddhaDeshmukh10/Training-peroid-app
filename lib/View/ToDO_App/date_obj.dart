@@ -116,7 +116,7 @@ class _Date_ObjState extends State<Date_Obj> {
             style: TextStyle(fontSize: 20),
           ),
           Text(addIndays,
-              style: TextStyle(fontSize: 20)), // Display future and past dates
+              style: TextStyle(fontSize: 20)), 
         ],
       ),
     );
