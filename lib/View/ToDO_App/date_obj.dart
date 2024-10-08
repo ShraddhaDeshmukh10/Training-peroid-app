@@ -53,15 +53,12 @@ class _Date_ObjState extends State<Date_Obj> {
         Duration difference = today.difference(selectedDate!);
         differenceIndays = "${difference.inDays} days";
 
-        // Calculate future and past dates
         DateTime future = today.add(Duration(days: 10));
         DateTime past = today.subtract(Duration(days: 13));
 
-        // Format future and past dates
         String formattedFuture = DateFormat('yyyy-MM-dd').format(future);
         String formattedPast = DateFormat('yyyy-MM-dd').format(past);
 
-        // Store formatted future and past dates in addIndays
         addIndays = "Future date: $formattedFuture\nPast date: $formattedPast";
       });
     }
